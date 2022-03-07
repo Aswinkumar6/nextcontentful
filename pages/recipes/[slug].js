@@ -25,13 +25,13 @@ export async function getStaticProps({params}) {
 'fields.slug':params.slug });
   return {
     props: {
-<<<<<<< HEAD
+
       recipe: items[0]},
       revalidate:1,
-=======
-      recipe: items[0],
+
+      
     },
->>>>>>> 97735c4a162ac43079108b37ca0e366b4cb3d7bc
+
   };
 }
 

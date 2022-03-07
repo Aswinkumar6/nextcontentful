@@ -25,7 +25,7 @@ export async function getStaticProps({params}) {
 'fields.slug':params.slug });
   return {
     props: {
-      recipe: items[0],revalidate:10
+      recipe: items[0],
     },
   };
 }

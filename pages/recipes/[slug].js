@@ -16,7 +16,7 @@ const client = createClient({
             }
         })
         return {
-          paths: paths,fallback:false
+          paths: paths,fallback:true
           }
     }
 export async function getStaticProps({params}) {
@@ -25,12 +25,15 @@ export async function getStaticProps({params}) {
 'fields.slug':params.slug });
   return {
     props: {
-      recipe: items[0],revalidate:10
-    },
+      recipe: items[0]},
+      revalidate:1,
   };
 }
 
 export default function RecipeDetails({recipe}) {
+    if(!recipe){
+        return <div>Loading...</div>
+    }
     console.log('recipe: ', recipe);
         const { featuredImage, title, cookingTime, ingredients,methods } = recipe.fields;
         console.log('ingredients: ', ingredients);
